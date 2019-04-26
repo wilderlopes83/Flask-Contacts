@@ -20,7 +20,7 @@ class User(db.Model):
         self.username = username
         self.password = generate_password_hash(password)
 
-    def comparare_password(self, password):
+    def compare_password(self, password):
         return check_password_hash(self.password, password)
 
     def __repr__(self):
