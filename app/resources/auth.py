@@ -27,7 +27,7 @@ class Login(Resource):
 
         token = jwt.encode(data, current_app.config["SECRET_KEY"])
 
-        return {"access_token": token.decode("utf-8")}
+        return {"access_token": "Bearer " + token.decode("utf-8")}
 
 class Register(Resource):
     def post(self):
